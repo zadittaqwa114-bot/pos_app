@@ -26,7 +26,7 @@ jobs:
           channel: 'stable'
 
       - name: Create Native Android Folder
-        run: flutter create . --platforms=android --org com.zadit.pos
+        run: flutter create . --force --platforms=android --org com.zadit.pos
 
       - name: Install Dependencies
         run: flutter pub get
