@@ -25,8 +25,11 @@ jobs:
         with:
           channel: 'stable'
 
-      - name: Create Native Android Folder
-        run: flutter create . --force --platforms=android --org com.zadit.pos
+      - name: Generate Clean Android Folder
+        run: |
+          flutter create --platforms=android --org com.zadit.pos temp_app
+          cp -r temp_app/android ./android
+          rm -rf temp_app
 
       - name: Install Dependencies
         run: flutter pub get
